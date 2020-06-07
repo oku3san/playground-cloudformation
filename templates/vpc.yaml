@@ -40,8 +40,8 @@ Resources:
     Type: "AWS::EC2::VPC"
     Properties:
       CidrBlock: !Ref VpcCidr
-      EnableDnsSupport: "true"
-      EnableDnsHostnames: "true"
+      EnableDnsSupport: True
+      EnableDnsHostnames: True
       InstanceTenancy: default
       Tags:
         - Key: Name
@@ -203,7 +203,27 @@ Resources:
 #  Outputs
 # ------------------------------------------------------------#
 Outputs:
-  MainVpc:
+  Vpc:
     Value: !Ref VPC
-    Export:
-      Name: 'vpc-id'
+#    Export:
+#      Name: 'Vpc'
+  PrimaryCidrBlock:
+    Value: !GetAtt VPC.CidrBlock
+#    Export:
+#      Name: 'PrimaryCidrBlock'
+  PrivateSubnetA:
+    Value: !Ref PrivateSubnetA
+#    Export:
+#      Name: 'PrivateSubnetA'
+  PrivateSubnetC:
+    Value: !Ref PrivateSubnetC
+#    Export:
+#      Name: 'PrivateSubnetC'
+  PublicSubnetA:
+    Value: !Ref PublicSubnetA
+#    Export:
+#      Name: 'PublicSubnetA'
+  PublicSubnetC:
+    Value: !Ref PublicSubnetC
+#    Export:
+#      Name: 'PublicSubnetC'
