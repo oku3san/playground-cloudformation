@@ -1,3 +1,4 @@
+---
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "Create VPC"
 
@@ -205,25 +206,15 @@ Resources:
 Outputs:
   Vpc:
     Value: !Ref VPC
-#    Export:
-#      Name: 'Vpc'
   PrimaryCidrBlock:
     Value: !GetAtt VPC.CidrBlock
-#    Export:
-#      Name: 'PrimaryCidrBlock'
   PrivateSubnetA:
     Value: !Ref PrivateSubnetA
-#    Export:
-#      Name: 'PrivateSubnetA'
   PrivateSubnetC:
     Value: !Ref PrivateSubnetC
-#    Export:
-#      Name: 'PrivateSubnetC'
   PublicSubnetA:
     Value: !Ref PublicSubnetA
-#    Export:
-#      Name: 'PublicSubnetA'
   PublicSubnetC:
     Value: !Ref PublicSubnetC
-#    Export:
-#      Name: 'PublicSubnetC'
+  PublicSubnets:
+    Value: !Join [ ",", [ !Ref PublicSubnetA, !Ref PublicSubnetC ] ]
