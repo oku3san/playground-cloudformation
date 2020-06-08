@@ -32,3 +32,11 @@ Resources:
         PublicSubnetC: !GetAtt VPC.Outputs.PublicSubnetC
         PrimaryCidrBlock: !GetAtt VPC.Outputs.PrimaryCidrBlock
         Vpc: !GetAtt VPC.Outputs.Vpc
+
+  ELB:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./templates/elb.yaml
+      Parameters:
+        PublicSubnets: !GetAtt VPC.Outputs.PublicSubnets
+        Vpc: !GetAtt VPC.Outputs.Vpc
