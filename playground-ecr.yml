@@ -1,0 +1,15 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Description: "Create ECR"
+
+# ------------------------------------------------------------#
+#  Resources
+# ------------------------------------------------------------#
+Resources:
+  # ------------------------------------------------------------#
+  #  ECR
+  # ------------------------------------------------------------#
+  UdemyEcr:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: oku3san/my-first-repo
