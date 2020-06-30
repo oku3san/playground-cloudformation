@@ -13,3 +13,8 @@ Resources:
     Type: AWS::ECR::Repository
     Properties:
       RepositoryName: oku3san/my-first-repo
+
+  DigitalbooksEcr:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: oku3san/echo
